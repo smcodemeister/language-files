@@ -1,21 +1,463 @@
-// Replace the embedded data section with:
-let easyCards = [], mediumCards = [], hardCards = [];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Māori Learning App</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            padding: 20px;
+        }
+        .container { max-width: 600px; width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+        h1 { font-size: 28px; color: white; text-align: center; margin-bottom: 10px; }
+        .subtitle { color: white; font-size: 18px; text-align: center; margin-bottom: 40px; opacity: 0.9; }
+        .mode-selection, .quiz-difficulty-selection { text-align: center; padding: 40px 20px; }
+        .mode-buttons, .quiz-difficulty-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .mode-btn, .quiz-difficulty-btn { background: white; color: #667eea; padding: 40px; border-radius: 20px; min-width: 250px; cursor: pointer; transition: all 0.3s; border: none; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2); }
+        .mode-btn:hover, .quiz-difficulty-btn:hover { transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3); }
+        .mode-icon { font-size: 60px; margin-bottom: 20px; }
+        .mode-title { font-size: 24px; font-weight: bold; margin-bottom: 10px; }
+        .mode-desc, .quiz-diff-desc { font-size: 16px; opacity: 0.7; }
+        .back-btn { background: rgba(255, 255, 255, 0.2); color: white; border: 2px solid white; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; font-weight: 600; margin: 10px auto; display: block; transition: all 0.3s; }
+        .back-btn:hover { background: rgba(255, 255, 255, 0.3); }
+        .difficulty-selector { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .difficulty-btn { padding: 12px 24px; font-size: 16px; font-weight: 600; border: 2px solid white; border-radius: 8px; cursor: pointer; transition: all 0.3s; background: rgba(255, 255, 255, 0.2); color: white; }
+        .difficulty-btn:hover { background: rgba(255, 255, 255, 0.3); transform: translateY(-2px); }
+        .difficulty-btn.active { background: white; color: #667eea; }
+        .card-container { flex: 1; display: flex; align-items: center; justify-content: center; perspective: 1000px; }
+        .card { width: 100%; min-height: 400px; position: relative; transform-style: preserve-3d; transition: transform 0.6s; cursor: pointer; }
+        .card.flipped { transform: rotateY(180deg); }
+        .card-face { position: absolute; width: 100%; min-height: 400px; backface-visibility: hidden; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); overflow-y: auto; }
+        .card-front { background: white; }
+        .card-back { background: #f8f9fa; transform: rotateY(180deg); }
+        .language-label { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #667eea; margin-bottom: 20px; font-weight: 600; }
+        .difficulty-badge { position: absolute; top: 20px; right: 20px; padding: 6px 12px; border-radius: 12px; font-size: 12px; font-weight: 600; text-transform: uppercase; }
+        .difficulty-badge.easy { background: #48bb78; color: white; }
+        .difficulty-badge.medium { background: #ed8936; color: white; }
+        .difficulty-badge.hard { background: #f56565; color: white; }
+        .card-text { font-size: 24px; font-weight: bold; color: #2d3748; text-align: center; line-height: 1.6; word-wrap: break-word; }
+        .card-text.small { font-size: 18px; }
+        .card-text.tiny { font-size: 16px; }
+        .tap-hint { position: absolute; bottom: 20px; font-size: 14px; color: #a0aec0; font-style: italic; }
+        .controls { display: flex; gap: 15px; justify-content: center; padding: 20px 0; flex-wrap: wrap; }
+        button { padding: 15px 30px; font-size: 16px; font-weight: 600; border: none; border-radius: 12px; cursor: pointer; transition: all 0.3s; color: white; }
+        .btn-prev { background: #4a5568; flex: 1; max-width: 150px; }
+        .btn-next { background: #48bb78; flex: 1; max-width: 150px; }
+        .btn-shuffle { background: #ed8936; max-width: 100%; }
+        button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+        .progress { color: rgba(255, 255, 255, 0.9); font-size: 16px; text-align: center; margin: 10px 0; }
+        .quiz-container { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; }
+        .quiz-card { background: white; border-radius: 20px; padding: 40px; width: 100%; max-width: 600px; min-height: 200px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; margin-bottom: 30px; }
+        .quiz-question { font-size: 24px; font-weight: bold; color: #2d3748; text-align: center; line-height: 1.6; }
+        .quiz-question.small { font-size: 18px; }
+        .quiz-question.tiny { font-size: 16px; }
+        .quiz-answers { display: grid; grid-template-columns: 1fr; gap: 15px; width: 100%; max-width: 600px; }
+        .quiz-answer-btn { background: white; color: #2d3748; padding: 20px; border-radius: 12px; border: 3px solid #e2e8f0; cursor: pointer; transition: all 0.3s; font-size: 16px; text-align: left; font-weight: 500; }
+        .quiz-answer-btn:hover:not(.correct):not(.incorrect):not(:disabled) { border-color: #667eea; background: #f7fafc; }
+        .quiz-answer-btn.correct { border-color: #48bb78; background: #c6f6d5; color: #22543d; }
+        .quiz-answer-btn.incorrect { border-color: #f56565; background: #fed7d7; color: #742a2a; }
+        .quiz-answer-btn:disabled { cursor: not-allowed; }
+        .quiz-score { color: white; font-size: 18px; font-weight: 600; margin: 10px 0; text-align: center; }
+        .results-container { text-align: center; padding: 40px; background: white; border-radius: 20px; max-width: 500px; margin: 40px auto; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+        .results-container h1 { color: #2d3748; margin-bottom: 30px; }
+        .score-number { font-size: 72px; font-weight: bold; color: #667eea; }
+        .score-text { font-size: 24px; color: #4a5568; margin-top: 10px; }
+        .score-message { font-size: 20px; color: #2d3748; margin: 20px 0; font-weight: 600; }
+        .results-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        .loading { text-align: center; padding: 40px; color: white; font-size: 18px; }
+        .error { text-align: center; padding: 40px; color: #fed7d7; background: rgba(245, 101, 101, 0.2); border-radius: 12px; margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="loadingScreen" class="loading">
+            <h1>Loading Flashcards...</h1>
+            <p>Fetching data from GitHub 📚</p>
+        </div>
 
-async function loadData() {
-    try {
+        <div id="errorScreen" class="error" style="display: none;">
+            <h1>⚠️ Error Loading Data</h1>
+            <p id="errorMessage"></p>
+        </div>
+
+        <div id="modeSelection" class="mode-selection" style="display: none;">
+            <h1>Māori Learning App</h1>
+            <p class="subtitle">Choose your learning mode</p>
+            <div class="mode-buttons">
+                <button class="mode-btn" onclick="selectMode('flashcards')">
+                    <div class="mode-icon">📚</div>
+                    <div class="mode-title">Flashcards</div>
+                    <div class="mode-desc">Study at your own pace</div>
+                </button>
+                <button class="mode-btn" onclick="selectMode('quiz')">
+                    <div class="mode-icon">✏️</div>
+                    <div class="mode-title">Quiz</div>
+                    <div class="mode-desc">Test your knowledge</div>
+                </button>
+            </div>
+        </div>
+
+        <div id="flashcardMode" style="display: none;">
+            <h1>Māori Flashcard App</h1>
+            <div class="progress" id="progress">Card 1 of 100</div>
+            <button class="back-btn" onclick="backToModeSelection()">← Back to Menu</button>
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" onclick="changeDifficulty('easy')">Easy (<span id="easyCount">100</span>)</button>
+                <button class="difficulty-btn" onclick="changeDifficulty('medium')">Medium (<span id="mediumCount">100</span>)</button>
+                <button class="difficulty-btn" onclick="changeDifficulty('hard')">Hard (<span id="hardCount">100</span>)</button>
+            </div>
+            <div class="card-container">
+                <div class="card" id="card" onclick="flipCard()">
+                    <div class="card-face card-front">
+                        <div class="difficulty-badge easy" id="frontBadge">Easy</div>
+                        <div class="language-label" id="frontLabel">Māori</div>
+                        <div class="card-text" id="frontText">Loading...</div>
+                        <div class="tap-hint">Tap to reveal</div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="difficulty-badge easy" id="backBadge">Easy</div>
+                        <div class="language-label" id="backLabel">English</div>
+                        <div class="card-text" id="backText">Loading...</div>
+                        <div class="tap-hint">Tap to flip back</div>
+                    </div>
+                </div>
+            </div>
+            <div class="controls">
+                <button class="btn-prev" onclick="prevCard()">← Previous</button>
+                <button class="btn-next" onclick="nextCard()">Next →</button>
+            </div>
+            <div class="controls">
+                <button class="btn-shuffle" onclick="shuffleDeck()">🔀 Shuffle</button>
+            </div>
+        </div>
+
+        <div id="quizMode" style="display: none;">
+            <div id="quizDifficultySelection" class="quiz-difficulty-selection">
+                <h1>Quiz Mode</h1>
+                <p class="subtitle">Select difficulty</p>
+                <button class="back-btn" onclick="backToModeSelection()">← Back</button>
+                <div class="quiz-difficulty-buttons">
+                    <button class="quiz-difficulty-btn" onclick="startQuiz('easy')">
+                        <div class="difficulty-badge easy">Easy</div>
+                        <div class="quiz-diff-desc">Common words & phrases</div>
+                    </button>
+                    <button class="quiz-difficulty-btn" onclick="startQuiz('medium')">
+                        <div class="difficulty-badge medium">Medium</div>
+                        <div class="quiz-diff-desc">Sentences</div>
+                    </button>
+                    <button class="quiz-difficulty-btn" onclick="startQuiz('hard')">
+                        <div class="difficulty-badge hard">Hard</div>
+                        <div class="quiz-diff-desc">Paragraphs</div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="quizQuestions" style="display: none;">
+                <h1>Quiz</h1>
+                <div class="progress" id="quizProgress">Question 1 of 10</div>
+                <div class="quiz-score">Score: <span id="currentScore">0</span>/10</div>
+                <button class="back-btn" onclick="backToModeSelection()">← Back</button>
+                <div class="quiz-container">
+                    <div class="quiz-card">
+                        <div class="difficulty-badge easy" id="quizBadge">Easy</div>
+                        <div class="language-label" id="quizLabel">Māori</div>
+                        <div class="quiz-question" id="quizQuestion">Loading...</div>
+                    </div>
+                    <div class="quiz-answers" id="quizAnswers"></div>
+                    <button class="btn-next" id="nextQuizBtn" onclick="nextQuestion()" style="display: none; margin: 20px auto;">Next →</button>
+                </div>
+            </div>
+
+            <div id="quizResults" style="display: none;">
+                <div class="results-container">
+                    <h1>Quiz Complete! 🎉</h1>
+                    <div class="final-score">
+                        <div class="score-number" id="finalScore">0</div>
+                        <div class="score-text">out of 10</div>
+                    </div>
+                    <div class="score-message" id="scoreMessage"></div>
+                    <div class="results-buttons">
+                        <button class="btn-next" onclick="restartQuiz()">Try Again</button>
+                        <button class="btn-prev" onclick="backToModeSelection()">Menu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // jsdelivr CDN allows CORS - loads from your GitHub repo
         const CDN_BASE = 'https://cdn.jsdelivr.net/gh/smcodemeister/language-files@main/';
-        const [easy, medium, hard] = await Promise.all([
-            fetch(CDN_BASE + 'maori-easy.json').then(r => r.json()),
-            fetch(CDN_BASE + 'maori-medium.json').then(r => r.json()),
-            fetch(CDN_BASE + 'maori-hard.json').then(r => r.json())
-        ]);
-        easyCards = easy;
-        mediumCards = medium;
-        hardCards = hard;
-        deck = [...easyCards];
-        return true;
-    } catch (error) {
-        console.error('Error loading data:', error);
-        return false;
-    }
-}
+        
+        let easyCards = [], mediumCards = [], hardCards = [];
+        let currentDifficulty='easy', currentIndex=0, deck=[], isFlipped=false;
+        let quizDifficulty='easy', quizQuestions=[], currentQuizIndex=0, quizScore=0, selectedAnswer=null;
+
+        async function loadData() {
+            try {
+                console.log('Loading data from:', CDN_BASE);
+                
+                const [easy, medium, hard] = await Promise.all([
+                    fetch(CDN_BASE + 'maori-easy.json').then(r => {
+                        if (!r.ok) throw new Error('Failed to load maori-easy.json');
+                        return r.json();
+                    }),
+                    fetch(CDN_BASE + 'maori-medium.json').then(r => {
+                        if (!r.ok) throw new Error('Failed to load maori-medium.json');
+                        return r.json();
+                    }),
+                    fetch(CDN_BASE + 'maori-hard.json').then(r => {
+                        if (!r.ok) throw new Error('Failed to load maori-hard.json');
+                        return r.json();
+                    })
+                ]);
+                
+                easyCards = easy;
+                mediumCards = medium;
+                hardCards = hard;
+                deck = [...easyCards];
+                
+                // Update counts in UI
+                document.getElementById('easyCount').textContent = easyCards.length;
+                document.getElementById('mediumCount').textContent = mediumCards.length;
+                document.getElementById('hardCount').textContent = hardCards.length;
+                
+                console.log('✓ Data loaded successfully!', {
+                    easy: easyCards.length,
+                    medium: mediumCards.length,
+                    hard: hardCards.length
+                });
+                
+                return true;
+            } catch (error) {
+                console.error('✗ Error loading data:', error);
+                return false;
+            }
+        }
+
+        async function init() {
+            const success = await loadData();
+            document.getElementById('loadingScreen').style.display = 'none';
+            
+            if (success) {
+                document.getElementById('modeSelection').style.display = 'block';
+            } else {
+                document.getElementById('errorScreen').style.display = 'block';
+                document.getElementById('errorMessage').innerHTML = 
+                    'Failed to load flashcard data.<br><br>' +
+                    'Please check:<br>' +
+                    '1. JSON files exist in your GitHub repo<br>' +
+                    '2. Files are named correctly (maori-easy.json, etc.)<br>' +
+                    '3. Repository is public<br><br>' +
+                    'Check browser console (F12) for details.';
+            }
+        }
+
+        function selectMode(mode) {
+            document.getElementById('modeSelection').style.display='none';
+            if(mode==='flashcards') {
+                document.getElementById('flashcardMode').style.display='block';
+                updateCard();
+            } else {
+                document.getElementById('quizMode').style.display='block';
+            }
+        }
+
+        function backToModeSelection() {
+            document.getElementById('flashcardMode').style.display='none';
+            document.getElementById('quizMode').style.display='none';
+            document.getElementById('quizDifficultySelection').style.display='block';
+            document.getElementById('quizQuestions').style.display='none';
+            document.getElementById('quizResults').style.display='none';
+            document.getElementById('modeSelection').style.display='block';
+        }
+
+        function changeDifficulty(d) {
+            currentDifficulty=d;
+            currentIndex=0;
+            document.querySelectorAll('.difficulty-btn').forEach(b=>b.classList.remove('active'));
+            event.target.classList.add('active');
+            deck=[...(d==='easy'?easyCards:d==='medium'?mediumCards:hardCards)];
+            updateCard();
+        }
+
+        function updateCard() {
+            if(!deck.length) return;
+            const c=deck[currentIndex];
+            if(isFlipped) {
+                document.getElementById('card').classList.remove('flipped');
+                isFlipped=false;
+            }
+            const s=Math.random()>0.5;
+            const ft=document.getElementById('frontText'), bt=document.getElementById('backText');
+            ft.className=bt.className='card-text';
+            if(currentDifficulty==='hard') {
+                ft.classList.add('tiny');
+                bt.classList.add('tiny');
+            } else if(currentDifficulty==='medium') {
+                ft.classList.add('small');
+                bt.classList.add('small');
+            }
+            if(s) {
+                document.getElementById('frontLabel').textContent='Māori';
+                ft.textContent=c.maori;
+                document.getElementById('backLabel').textContent='English';
+                bt.textContent=c.english;
+            } else {
+                document.getElementById('frontLabel').textContent='English';
+                ft.textContent=c.english;
+                document.getElementById('backLabel').textContent='Māori';
+                bt.textContent=c.maori;
+            }
+            const bc=currentDifficulty, bt2=bc.charAt(0).toUpperCase()+bc.slice(1);
+            document.getElementById('frontBadge').className=document.getElementById('backBadge').className=`difficulty-badge ${bc}`;
+            document.getElementById('frontBadge').textContent=document.getElementById('backBadge').textContent=bt2;
+            document.getElementById('progress').textContent=`Card ${currentIndex+1} of ${deck.length}`;
+        }
+
+        function flipCard() {
+            document.getElementById('card').classList.toggle('flipped');
+            isFlipped=!isFlipped;
+        }
+
+        function nextCard() {
+            if(currentIndex<deck.length-1) {
+                currentIndex++;
+                updateCard();
+            }
+        }
+
+        function prevCard() {
+            if(currentIndex>0) {
+                currentIndex--;
+                updateCard();
+            }
+        }
+
+        function shuffleDeck() {
+            for(let i=deck.length-1;i>0;i--) {
+                const j=Math.floor(Math.random()*(i+1));
+                [deck[i],deck[j]]=[deck[j],deck[i]];
+            }
+            currentIndex=0;
+            updateCard();
+        }
+
+        function startQuiz(d) {
+            quizDifficulty=d;
+            quizScore=0;
+            currentQuizIndex=0;
+            let sd=[...(d==='easy'?easyCards:d==='medium'?mediumCards:hardCards)];
+            for(let i=sd.length-1;i>0;i--) {
+                const j=Math.floor(Math.random()*(i+1));
+                [sd[i],sd[j]]=[sd[j],sd[i]];
+            }
+            quizQuestions=sd.slice(0,10);
+            document.getElementById('quizDifficultySelection').style.display='none';
+            document.getElementById('quizQuestions').style.display='block';
+            showQuizQuestion();
+        }
+
+        function showQuizQuestion() {
+            const q=quizQuestions[currentQuizIndex], s=Math.random()>0.5;
+            const bc=quizDifficulty, bt=bc.charAt(0).toUpperCase()+bc.slice(1);
+            document.getElementById('quizBadge').className=`difficulty-badge ${bc}`;
+            document.getElementById('quizBadge').textContent=bt;
+            const qt=s?q.maori:q.english, ca=s?q.english:q.maori;
+            document.getElementById('quizLabel').textContent=s?'Māori':'English';
+            const qe=document.getElementById('quizQuestion');
+            qe.textContent=qt;
+            qe.className='quiz-question';
+            if(quizDifficulty==='hard') qe.classList.add('tiny');
+            else if(quizDifficulty==='medium') qe.classList.add('small');
+            let ad=[...(quizDifficulty==='easy'?easyCards:quizDifficulty==='medium'?mediumCards:hardCards)];
+            const wa=[], ua=new Set([ca]);
+            while(wa.length<3&&ad.length>0) {
+                const ri=Math.floor(Math.random()*ad.length), pa=s?ad[ri].english:ad[ri].maori;
+                if(!ua.has(pa)) {
+                    wa.push(pa);
+                    ua.add(pa);
+                }
+                ad.splice(ri,1);
+            }
+            const ans=[ca,...wa];
+            for(let i=ans.length-1;i>0;i--) {
+                const j=Math.floor(Math.random()*(i+1));
+                [ans[i],ans[j]]=[ans[j],ans[i]];
+            }
+            const ac=document.getElementById('quizAnswers');
+            ac.innerHTML='';
+            ans.forEach(a=>{
+                const b=document.createElement('button');
+                b.className='quiz-answer-btn';
+                b.textContent=a;
+                b.onclick=()=>selectAnswer(a,ca,b);
+                ac.appendChild(b);
+            });
+            document.getElementById('quizProgress').textContent=`Question ${currentQuizIndex+1} of ${quizQuestions.length}`;
+            document.getElementById('currentScore').textContent=quizScore;
+            document.getElementById('nextQuizBtn').style.display='none';
+            selectedAnswer=null;
+        }
+
+        function selectAnswer(s,c,b) {
+            if(selectedAnswer!==null) return;
+            selectedAnswer=s;
+            document.querySelectorAll('.quiz-answer-btn').forEach(btn=>{
+                btn.disabled=true;
+                if(btn.textContent===c) btn.classList.add('correct');
+            });
+            if(s!==c) b.classList.add('incorrect');
+            else {
+                quizScore++;
+                document.getElementById('currentScore').textContent=quizScore;
+            }
+            document.getElementById('nextQuizBtn').style.display='block';
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            if(currentQuizIndex<quizQuestions.length) showQuizQuestion();
+            else showResults();
+        }
+
+        function showResults() {
+            document.getElementById('quizQuestions').style.display='none';
+            document.getElementById('quizResults').style.display='block';
+            document.getElementById('finalScore').textContent=quizScore;
+            let m='';
+            if(quizScore===10) m='Perfect! Ka pai rawa atu! 🌟';
+            else if(quizScore>=8) m='Excellent! Ka rawe! 👏';
+            else if(quizScore>=6) m='Good job! Ka pai! 👍';
+            else if(quizScore>=4) m='Keep practicing! Kia kaha! 💪';
+            else m='Keep learning! 📚';
+            document.getElementById('scoreMessage').textContent=m;
+        }
+
+        function restartQuiz() {
+            document.getElementById('quizResults').style.display='none';
+            document.getElementById('quizDifficultySelection').style.display='block';
+        }
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if(document.getElementById('flashcardMode').style.display === 'block') {
+                if(e.key === 'ArrowLeft') prevCard();
+                if(e.key === 'ArrowRight') nextCard();
+                if(e.key === ' ') {
+                    e.preventDefault();
+                    flipCard();
+                }
+            }
+        });
+
+        // Initialize on page load
+        init();
+    </script>
+</body>
+</html>
