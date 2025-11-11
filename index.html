@@ -1,0 +1,21 @@
+// Replace the embedded data section with:
+let easyCards = [], mediumCards = [], hardCards = [];
+
+async function loadData() {
+    try {
+        const CDN_BASE = 'https://cdn.jsdelivr.net/gh/smcodemeister/language-files@main/';
+        const [easy, medium, hard] = await Promise.all([
+            fetch(CDN_BASE + 'maori-easy.json').then(r => r.json()),
+            fetch(CDN_BASE + 'maori-medium.json').then(r => r.json()),
+            fetch(CDN_BASE + 'maori-hard.json').then(r => r.json())
+        ]);
+        easyCards = easy;
+        mediumCards = medium;
+        hardCards = hard;
+        deck = [...easyCards];
+        return true;
+    } catch (error) {
+        console.error('Error loading data:', error);
+        return false;
+    }
+}
