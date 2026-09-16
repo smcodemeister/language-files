@@ -175,7 +175,7 @@
                         <div class="quiz-breakdown" id="quizBreakdown"></div>
                     </div>
                     <div class="quiz-answers" id="quizAnswers"></div>
-                    <button class="btn-explain" id="explainBtn" onclick="toggleExplain()">💡 Explain</button>
+                    <button class="btn-explain" id="explainBtn" onclick="toggleExplain()" style="display: none;">🔍 Reveal</button>
                     <button class="btn-next" id="nextQuizBtn" onclick="nextQuestion()" style="display: none; margin: 20px auto;">Next →</button>
                 </div>
             </div>
@@ -437,7 +437,7 @@
             qe.className='quiz-question';
             if(quizDifficulty==='hard') qe.classList.add('tiny');
             else if(quizDifficulty==='medium') qe.classList.add('small');
-            renderBreakdown(s ? explainMaoriText(qt) : []);
+            renderBreakdown(explainMaoriText(q.maori));
             let ad=[...(quizDifficulty==='easy'?easyCards:quizDifficulty==='medium'?mediumCards:hardCards)];
             const wa=[], ua=new Set([ca]);
             while(wa.length<3&&ad.length>0) {
@@ -473,7 +473,9 @@
             document.getElementById('currentScore').textContent=quizScore;
             document.getElementById('nextQuizBtn').style.display='none';
             explainVisible=false;
-            document.getElementById('explainBtn').textContent='💡 Explain';
+            const explainBtn=document.getElementById('explainBtn');
+            explainBtn.textContent='🔍 Reveal';
+            explainBtn.style.display='none';
             selectedAnswer=null;
         }
 
@@ -484,7 +486,7 @@
             });
             const bd=document.getElementById('quizBreakdown');
             if(bd.children.length>0) bd.style.display=explainVisible?'block':'none';
-            document.getElementById('explainBtn').textContent=explainVisible?'🙈 Hide':'💡 Explain';
+            document.getElementById('explainBtn').textContent=explainVisible?'🙈 Hide':'🔍 Reveal';
         }
 
         function selectAnswer(s,c,b) {
@@ -500,6 +502,7 @@
                 document.getElementById('currentScore').textContent=quizScore;
             }
             document.getElementById('nextQuizBtn').style.display='block';
+            document.getElementById('explainBtn').style.display='block';
         }
 
         function nextQuestion() {
