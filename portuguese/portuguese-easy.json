@@ -1,0 +1,406 @@
+[
+  {
+    "portuguese": "Olá",
+    "english": "Hello"
+  },
+  {
+    "portuguese": "Bom dia",
+    "english": "Good morning"
+  },
+  {
+    "portuguese": "Boa tarde",
+    "english": "Good afternoon"
+  },
+  {
+    "portuguese": "Boa noite",
+    "english": "Good night / Good evening"
+  },
+  {
+    "portuguese": "Como você está?",
+    "english": "How are you? (informal)"
+  },
+  {
+    "portuguese": "Como o senhor está?",
+    "english": "How are you? (formal, to a man)"
+  },
+  {
+    "portuguese": "Estou bem",
+    "english": "I'm good"
+  },
+  {
+    "portuguese": "Estou muito bem",
+    "english": "I'm very good"
+  },
+  {
+    "portuguese": "Bem-vindo",
+    "english": "Welcome (to a man)"
+  },
+  {
+    "portuguese": "Bem-vinda",
+    "english": "Welcome (to a woman)"
+  },
+  {
+    "portuguese": "Adeus",
+    "english": "Goodbye"
+  },
+  {
+    "portuguese": "Até logo",
+    "english": "See you later"
+  },
+  {
+    "portuguese": "Até breve",
+    "english": "See you soon"
+  },
+  {
+    "portuguese": "Até amanhã",
+    "english": "See you tomorrow"
+  },
+  {
+    "portuguese": "Até mais",
+    "english": "See you"
+  },
+  {
+    "portuguese": "Sim",
+    "english": "Yes"
+  },
+  {
+    "portuguese": "Não",
+    "english": "No"
+  },
+  {
+    "portuguese": "Por favor",
+    "english": "Please"
+  },
+  {
+    "portuguese": "Obrigado",
+    "english": "Thank you (said by a man)"
+  },
+  {
+    "portuguese": "Obrigada",
+    "english": "Thank you (said by a woman)"
+  },
+  {
+    "portuguese": "Muito obrigado",
+    "english": "Thank you very much (said by a man)"
+  },
+  {
+    "portuguese": "De nada",
+    "english": "You're welcome"
+  },
+  {
+    "portuguese": "Desculpe",
+    "english": "Excuse me / Sorry"
+  },
+  {
+    "portuguese": "Sinto muito",
+    "english": "I'm sorry"
+  },
+  {
+    "portuguese": "Com licença",
+    "english": "Excuse me (to pass by)"
+  },
+  {
+    "portuguese": "Amor",
+    "english": "Love"
+  },
+  {
+    "portuguese": "Eu te amo",
+    "english": "I love you (romantic)"
+  },
+  {
+    "portuguese": "Gosto de você",
+    "english": "I like you / I'm fond of you"
+  },
+  {
+    "portuguese": "Amizade",
+    "english": "Friendship"
+  },
+  {
+    "portuguese": "Um",
+    "english": "One"
+  },
+  {
+    "portuguese": "Dois",
+    "english": "Two"
+  },
+  {
+    "portuguese": "Três",
+    "english": "Three"
+  },
+  {
+    "portuguese": "Quatro",
+    "english": "Four"
+  },
+  {
+    "portuguese": "Cinco",
+    "english": "Five"
+  },
+  {
+    "portuguese": "Seis",
+    "english": "Six"
+  },
+  {
+    "portuguese": "Sete",
+    "english": "Seven"
+  },
+  {
+    "portuguese": "Oito",
+    "english": "Eight"
+  },
+  {
+    "portuguese": "Nove",
+    "english": "Nine"
+  },
+  {
+    "portuguese": "Dez",
+    "english": "Ten"
+  },
+  {
+    "portuguese": "Onze",
+    "english": "Eleven"
+  },
+  {
+    "portuguese": "Doze",
+    "english": "Twelve"
+  },
+  {
+    "portuguese": "Vermelho",
+    "english": "Red"
+  },
+  {
+    "portuguese": "Azul",
+    "english": "Blue"
+  },
+  {
+    "portuguese": "Verde",
+    "english": "Green"
+  },
+  {
+    "portuguese": "Amarelo",
+    "english": "Yellow"
+  },
+  {
+    "portuguese": "Preto",
+    "english": "Black"
+  },
+  {
+    "portuguese": "Branco",
+    "english": "White"
+  },
+  {
+    "portuguese": "Laranja",
+    "english": "Orange"
+  },
+  {
+    "portuguese": "Roxo",
+    "english": "Purple"
+  },
+  {
+    "portuguese": "Rosa",
+    "english": "Pink"
+  },
+  {
+    "portuguese": "Cinza",
+    "english": "Gray"
+  },
+  {
+    "portuguese": "Segunda-feira",
+    "english": "Monday"
+  },
+  {
+    "portuguese": "Terça-feira",
+    "english": "Tuesday"
+  },
+  {
+    "portuguese": "Quarta-feira",
+    "english": "Wednesday"
+  },
+  {
+    "portuguese": "Quinta-feira",
+    "english": "Thursday"
+  },
+  {
+    "portuguese": "Sexta-feira",
+    "english": "Friday"
+  },
+  {
+    "portuguese": "Sábado",
+    "english": "Saturday"
+  },
+  {
+    "portuguese": "Domingo",
+    "english": "Sunday"
+  },
+  {
+    "portuguese": "Janeiro",
+    "english": "January"
+  },
+  {
+    "portuguese": "Fevereiro",
+    "english": "February"
+  },
+  {
+    "portuguese": "Março",
+    "english": "March"
+  },
+  {
+    "portuguese": "Pai",
+    "english": "Father"
+  },
+  {
+    "portuguese": "Mãe",
+    "english": "Mother"
+  },
+  {
+    "portuguese": "Irmão",
+    "english": "Brother"
+  },
+  {
+    "portuguese": "Irmã",
+    "english": "Sister"
+  },
+  {
+    "portuguese": "Filho",
+    "english": "Son"
+  },
+  {
+    "portuguese": "Filha",
+    "english": "Daughter"
+  },
+  {
+    "portuguese": "Avô",
+    "english": "Grandfather"
+  },
+  {
+    "portuguese": "Avó",
+    "english": "Grandmother"
+  },
+  {
+    "portuguese": "Família",
+    "english": "Family"
+  },
+  {
+    "portuguese": "Amigo",
+    "english": "Friend (male)"
+  },
+  {
+    "portuguese": "Amiga",
+    "english": "Friend (female)"
+  },
+  {
+    "portuguese": "Água",
+    "english": "Water"
+  },
+  {
+    "portuguese": "Pão",
+    "english": "Bread"
+  },
+  {
+    "portuguese": "Leite",
+    "english": "Milk"
+  },
+  {
+    "portuguese": "Café",
+    "english": "Coffee"
+  },
+  {
+    "portuguese": "Chá",
+    "english": "Tea"
+  },
+  {
+    "portuguese": "Maçã",
+    "english": "Apple"
+  },
+  {
+    "portuguese": "Banana",
+    "english": "Banana"
+  },
+  {
+    "portuguese": "Casa",
+    "english": "House"
+  },
+  {
+    "portuguese": "Escola",
+    "english": "School"
+  },
+  {
+    "portuguese": "Trabalho",
+    "english": "Work"
+  },
+  {
+    "portuguese": "Cidade",
+    "english": "City"
+  },
+  {
+    "portuguese": "País",
+    "english": "Country"
+  },
+  {
+    "portuguese": "Cachorro",
+    "english": "Dog"
+  },
+  {
+    "portuguese": "Gato",
+    "english": "Cat"
+  },
+  {
+    "portuguese": "Grande",
+    "english": "Big"
+  },
+  {
+    "portuguese": "Pequeno",
+    "english": "Small"
+  },
+  {
+    "portuguese": "Bom",
+    "english": "Good"
+  },
+  {
+    "portuguese": "Mau",
+    "english": "Bad"
+  },
+  {
+    "portuguese": "Feliz",
+    "english": "Happy"
+  },
+  {
+    "portuguese": "Triste",
+    "english": "Sad"
+  },
+  {
+    "portuguese": "Quente",
+    "english": "Hot"
+  },
+  {
+    "portuguese": "Frio",
+    "english": "Cold"
+  },
+  {
+    "portuguese": "O quê?",
+    "english": "What?"
+  },
+  {
+    "portuguese": "Quem?",
+    "english": "Who?"
+  },
+  {
+    "portuguese": "Onde?",
+    "english": "Where?"
+  },
+  {
+    "portuguese": "Quando?",
+    "english": "When?"
+  },
+  {
+    "portuguese": "Por quê?",
+    "english": "Why?"
+  },
+  {
+    "portuguese": "Como você se chama?",
+    "english": "What is your name?"
+  },
+  {
+    "portuguese": "Muito prazer",
+    "english": "Nice to meet you"
+  }
+]

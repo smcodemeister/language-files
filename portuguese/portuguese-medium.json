@@ -1,0 +1,242 @@
+[
+  {
+    "portuguese": "Vou à loja",
+    "english": "I am going to the shop"
+  },
+  {
+    "portuguese": "Estou comendo",
+    "english": "I am eating"
+  },
+  {
+    "portuguese": "Estou bebendo",
+    "english": "I am drinking"
+  },
+  {
+    "portuguese": "Estou dormindo",
+    "english": "I am sleeping"
+  },
+  {
+    "portuguese": "Como você se chama?",
+    "english": "What is your name?"
+  },
+  {
+    "portuguese": "Meu nome é [Nome]",
+    "english": "My name is [Name]"
+  },
+  {
+    "portuguese": "De onde você é?",
+    "english": "Where are you from?"
+  },
+  {
+    "portuguese": "Sou de São Paulo",
+    "english": "I am from São Paulo"
+  },
+  {
+    "portuguese": "Moro em São Paulo",
+    "english": "I live in São Paulo"
+  },
+  {
+    "portuguese": "Estou trabalhando",
+    "english": "I am working"
+  },
+  {
+    "portuguese": "Estou aprendendo português",
+    "english": "I am learning Portuguese"
+  },
+  {
+    "portuguese": "Eu gosto de bolo de chocolate",
+    "english": "I like chocolate cake"
+  },
+  {
+    "portuguese": "Eu não quero",
+    "english": "I don't want"
+  },
+  {
+    "portuguese": "Eu quero ir à loja",
+    "english": "I want to go to the shop"
+  },
+  {
+    "portuguese": "Você está com fome?",
+    "english": "Are you hungry?"
+  },
+  {
+    "portuguese": "Estou com fome",
+    "english": "I am hungry"
+  },
+  {
+    "portuguese": "Estou com sede",
+    "english": "I am thirsty"
+  },
+  {
+    "portuguese": "Quantos anos você tem?",
+    "english": "How old are you?"
+  },
+  {
+    "portuguese": "Tenho vinte anos",
+    "english": "I am twenty years old"
+  },
+  {
+    "portuguese": "Que horas são?",
+    "english": "What time is it?"
+  },
+  {
+    "portuguese": "São três horas",
+    "english": "It is three o'clock"
+  },
+  {
+    "portuguese": "Está fazendo calor hoje",
+    "english": "It is hot today"
+  },
+  {
+    "portuguese": "Está fazendo frio hoje",
+    "english": "It is cold today"
+  },
+  {
+    "portuguese": "Está chovendo",
+    "english": "It is raining"
+  },
+  {
+    "portuguese": "Eu gosto de ler",
+    "english": "I like to read"
+  },
+  {
+    "portuguese": "Eu gosto de viajar",
+    "english": "I like to travel"
+  },
+  {
+    "portuguese": "Eu não gosto de café",
+    "english": "I don't like coffee"
+  },
+  {
+    "portuguese": "Você pode me ajudar?",
+    "english": "Can you help me?"
+  },
+  {
+    "portuguese": "Eu preciso de ajuda",
+    "english": "I need help"
+  },
+  {
+    "portuguese": "Onde fica o banheiro?",
+    "english": "Where is the bathroom?"
+  },
+  {
+    "portuguese": "Fica à direita",
+    "english": "It is on the right"
+  },
+  {
+    "portuguese": "Fica à esquerda",
+    "english": "It is on the left"
+  },
+  {
+    "portuguese": "Siga em frente",
+    "english": "Go straight ahead"
+  },
+  {
+    "portuguese": "Quanto custa isso?",
+    "english": "How much does this cost?"
+  },
+  {
+    "portuguese": "É muito caro",
+    "english": "It is very expensive"
+  },
+  {
+    "portuguese": "É barato",
+    "english": "It is cheap"
+  },
+  {
+    "portuguese": "Eu tenho que ir",
+    "english": "I have to go"
+  },
+  {
+    "portuguese": "Nos vemos amanhã",
+    "english": "See you tomorrow"
+  },
+  {
+    "portuguese": "Você fala inglês?",
+    "english": "Do you speak English?"
+  },
+  {
+    "portuguese": "Eu falo um pouco de português",
+    "english": "I speak a little Portuguese"
+  },
+  {
+    "portuguese": "Eu não entendo",
+    "english": "I don't understand"
+  },
+  {
+    "portuguese": "Você pode repetir, por favor?",
+    "english": "Can you repeat, please?"
+  },
+  {
+    "portuguese": "Estou cansado",
+    "english": "I am tired (male)"
+  },
+  {
+    "portuguese": "Estou cansada",
+    "english": "I am tired (female)"
+  },
+  {
+    "portuguese": "Estou feliz",
+    "english": "I am happy"
+  },
+  {
+    "portuguese": "Estou triste",
+    "english": "I am sad"
+  },
+  {
+    "portuguese": "Estou com medo",
+    "english": "I am afraid"
+  },
+  {
+    "portuguese": "O que você está fazendo?",
+    "english": "What are you doing?"
+  },
+  {
+    "portuguese": "Estou estudando",
+    "english": "I am studying"
+  },
+  {
+    "portuguese": "Vamos à praia",
+    "english": "We are going to the beach"
+  },
+  {
+    "portuguese": "Ela está cozinhando",
+    "english": "She is cooking"
+  },
+  {
+    "portuguese": "Ele está lendo um livro",
+    "english": "He is reading a book"
+  },
+  {
+    "portuguese": "Meus pais moram no campo",
+    "english": "My parents live in the countryside"
+  },
+  {
+    "portuguese": "Vou ligar para minha irmã",
+    "english": "I am going to call my sister"
+  },
+  {
+    "portuguese": "Que dia é hoje?",
+    "english": "What day is it today?"
+  },
+  {
+    "portuguese": "Hoje é segunda-feira",
+    "english": "Today is Monday"
+  },
+  {
+    "portuguese": "Amanhã é meu aniversário",
+    "english": "Tomorrow is my birthday"
+  },
+  {
+    "portuguese": "Feliz aniversário",
+    "english": "Happy birthday"
+  },
+  {
+    "portuguese": "Bom apetite",
+    "english": "Enjoy your meal"
+  },
+  {
+    "portuguese": "Que você tenha um bom dia",
+    "english": "Have a good day"
+  }
+]
