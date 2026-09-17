@@ -1,0 +1,402 @@
+[
+  {
+    "spanish": "Hola",
+    "english": "Hello"
+  },
+  {
+    "spanish": "Buenos días",
+    "english": "Good morning"
+  },
+  {
+    "spanish": "Buenas tardes",
+    "english": "Good afternoon"
+  },
+  {
+    "spanish": "Buenas noches",
+    "english": "Good night / Good evening"
+  },
+  {
+    "spanish": "¿Cómo estás?",
+    "english": "How are you? (informal)"
+  },
+  {
+    "spanish": "¿Cómo está usted?",
+    "english": "How are you? (formal)"
+  },
+  {
+    "spanish": "Estoy bien",
+    "english": "I'm good"
+  },
+  {
+    "spanish": "Estoy muy bien",
+    "english": "I'm very good"
+  },
+  {
+    "spanish": "Bienvenido",
+    "english": "Welcome (to a man)"
+  },
+  {
+    "spanish": "Bienvenida",
+    "english": "Welcome (to a woman)"
+  },
+  {
+    "spanish": "Adiós",
+    "english": "Goodbye"
+  },
+  {
+    "spanish": "Hasta luego",
+    "english": "See you later"
+  },
+  {
+    "spanish": "Hasta pronto",
+    "english": "See you soon"
+  },
+  {
+    "spanish": "Hasta mañana",
+    "english": "See you tomorrow"
+  },
+  {
+    "spanish": "Nos vemos",
+    "english": "See you"
+  },
+  {
+    "spanish": "Sí",
+    "english": "Yes"
+  },
+  {
+    "spanish": "No",
+    "english": "No"
+  },
+  {
+    "spanish": "Por favor",
+    "english": "Please"
+  },
+  {
+    "spanish": "Gracias",
+    "english": "Thank you"
+  },
+  {
+    "spanish": "Muchas gracias",
+    "english": "Thank you very much"
+  },
+  {
+    "spanish": "De nada",
+    "english": "You're welcome"
+  },
+  {
+    "spanish": "Perdón",
+    "english": "Excuse me / Sorry"
+  },
+  {
+    "spanish": "Lo siento",
+    "english": "I'm sorry"
+  },
+  {
+    "spanish": "Con permiso",
+    "english": "Excuse me (to pass by)"
+  },
+  {
+    "spanish": "Amor",
+    "english": "Love"
+  },
+  {
+    "spanish": "Te quiero",
+    "english": "I love you (affectionate)"
+  },
+  {
+    "spanish": "Te amo",
+    "english": "I love you (romantic)"
+  },
+  {
+    "spanish": "Amistad",
+    "english": "Friendship"
+  },
+  {
+    "spanish": "Uno",
+    "english": "One"
+  },
+  {
+    "spanish": "Dos",
+    "english": "Two"
+  },
+  {
+    "spanish": "Tres",
+    "english": "Three"
+  },
+  {
+    "spanish": "Cuatro",
+    "english": "Four"
+  },
+  {
+    "spanish": "Cinco",
+    "english": "Five"
+  },
+  {
+    "spanish": "Seis",
+    "english": "Six"
+  },
+  {
+    "spanish": "Siete",
+    "english": "Seven"
+  },
+  {
+    "spanish": "Ocho",
+    "english": "Eight"
+  },
+  {
+    "spanish": "Nueve",
+    "english": "Nine"
+  },
+  {
+    "spanish": "Diez",
+    "english": "Ten"
+  },
+  {
+    "spanish": "Once",
+    "english": "Eleven"
+  },
+  {
+    "spanish": "Doce",
+    "english": "Twelve"
+  },
+  {
+    "spanish": "Rojo",
+    "english": "Red"
+  },
+  {
+    "spanish": "Azul",
+    "english": "Blue"
+  },
+  {
+    "spanish": "Verde",
+    "english": "Green"
+  },
+  {
+    "spanish": "Amarillo",
+    "english": "Yellow"
+  },
+  {
+    "spanish": "Negro",
+    "english": "Black"
+  },
+  {
+    "spanish": "Blanco",
+    "english": "White"
+  },
+  {
+    "spanish": "Naranja",
+    "english": "Orange"
+  },
+  {
+    "spanish": "Morado",
+    "english": "Purple"
+  },
+  {
+    "spanish": "Rosa",
+    "english": "Pink"
+  },
+  {
+    "spanish": "Gris",
+    "english": "Gray"
+  },
+  {
+    "spanish": "Lunes",
+    "english": "Monday"
+  },
+  {
+    "spanish": "Martes",
+    "english": "Tuesday"
+  },
+  {
+    "spanish": "Miércoles",
+    "english": "Wednesday"
+  },
+  {
+    "spanish": "Jueves",
+    "english": "Thursday"
+  },
+  {
+    "spanish": "Viernes",
+    "english": "Friday"
+  },
+  {
+    "spanish": "Sábado",
+    "english": "Saturday"
+  },
+  {
+    "spanish": "Domingo",
+    "english": "Sunday"
+  },
+  {
+    "spanish": "Enero",
+    "english": "January"
+  },
+  {
+    "spanish": "Febrero",
+    "english": "February"
+  },
+  {
+    "spanish": "Marzo",
+    "english": "March"
+  },
+  {
+    "spanish": "Padre",
+    "english": "Father"
+  },
+  {
+    "spanish": "Madre",
+    "english": "Mother"
+  },
+  {
+    "spanish": "Hermano",
+    "english": "Brother"
+  },
+  {
+    "spanish": "Hermana",
+    "english": "Sister"
+  },
+  {
+    "spanish": "Hijo",
+    "english": "Son"
+  },
+  {
+    "spanish": "Hija",
+    "english": "Daughter"
+  },
+  {
+    "spanish": "Abuelo",
+    "english": "Grandfather"
+  },
+  {
+    "spanish": "Abuela",
+    "english": "Grandmother"
+  },
+  {
+    "spanish": "Familia",
+    "english": "Family"
+  },
+  {
+    "spanish": "Amigo",
+    "english": "Friend (male)"
+  },
+  {
+    "spanish": "Amiga",
+    "english": "Friend (female)"
+  },
+  {
+    "spanish": "Agua",
+    "english": "Water"
+  },
+  {
+    "spanish": "Pan",
+    "english": "Bread"
+  },
+  {
+    "spanish": "Leche",
+    "english": "Milk"
+  },
+  {
+    "spanish": "Café",
+    "english": "Coffee"
+  },
+  {
+    "spanish": "Té",
+    "english": "Tea"
+  },
+  {
+    "spanish": "Manzana",
+    "english": "Apple"
+  },
+  {
+    "spanish": "Plátano",
+    "english": "Banana"
+  },
+  {
+    "spanish": "Casa",
+    "english": "House"
+  },
+  {
+    "spanish": "Escuela",
+    "english": "School"
+  },
+  {
+    "spanish": "Trabajo",
+    "english": "Work"
+  },
+  {
+    "spanish": "Ciudad",
+    "english": "City"
+  },
+  {
+    "spanish": "País",
+    "english": "Country"
+  },
+  {
+    "spanish": "Perro",
+    "english": "Dog"
+  },
+  {
+    "spanish": "Gato",
+    "english": "Cat"
+  },
+  {
+    "spanish": "Grande",
+    "english": "Big"
+  },
+  {
+    "spanish": "Pequeño",
+    "english": "Small"
+  },
+  {
+    "spanish": "Bueno",
+    "english": "Good"
+  },
+  {
+    "spanish": "Malo",
+    "english": "Bad"
+  },
+  {
+    "spanish": "Feliz",
+    "english": "Happy"
+  },
+  {
+    "spanish": "Triste",
+    "english": "Sad"
+  },
+  {
+    "spanish": "Caliente",
+    "english": "Hot"
+  },
+  {
+    "spanish": "Frío",
+    "english": "Cold"
+  },
+  {
+    "spanish": "¿Qué?",
+    "english": "What?"
+  },
+  {
+    "spanish": "¿Quién?",
+    "english": "Who?"
+  },
+  {
+    "spanish": "¿Dónde?",
+    "english": "Where?"
+  },
+  {
+    "spanish": "¿Cuándo?",
+    "english": "When?"
+  },
+  {
+    "spanish": "¿Por qué?",
+    "english": "Why?"
+  },
+  {
+    "spanish": "¿Cómo te llamas?",
+    "english": "What is your name?"
+  },
+  {
+    "spanish": "Mucho gusto",
+    "english": "Nice to meet you"
+  }
+]

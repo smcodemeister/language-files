@@ -1,0 +1,242 @@
+[
+  {
+    "spanish": "Voy a la tienda",
+    "english": "I am going to the shop"
+  },
+  {
+    "spanish": "Estoy comiendo",
+    "english": "I am eating"
+  },
+  {
+    "spanish": "Estoy bebiendo",
+    "english": "I am drinking"
+  },
+  {
+    "spanish": "Estoy durmiendo",
+    "english": "I am sleeping"
+  },
+  {
+    "spanish": "¿Cómo te llamas?",
+    "english": "What is your name?"
+  },
+  {
+    "spanish": "Me llamo [Nombre]",
+    "english": "My name is [Name]"
+  },
+  {
+    "spanish": "¿De dónde eres?",
+    "english": "Where are you from?"
+  },
+  {
+    "spanish": "Soy de Madrid",
+    "english": "I am from Madrid"
+  },
+  {
+    "spanish": "Vivo en Madrid",
+    "english": "I live in Madrid"
+  },
+  {
+    "spanish": "Estoy trabajando",
+    "english": "I am working"
+  },
+  {
+    "spanish": "Estoy aprendiendo español",
+    "english": "I am learning Spanish"
+  },
+  {
+    "spanish": "Me gusta el pastel de chocolate",
+    "english": "I like chocolate cake"
+  },
+  {
+    "spanish": "No quiero",
+    "english": "I don't want"
+  },
+  {
+    "spanish": "Quiero ir a la tienda",
+    "english": "I want to go to the shop"
+  },
+  {
+    "spanish": "¿Tienes hambre?",
+    "english": "Are you hungry?"
+  },
+  {
+    "spanish": "Tengo hambre",
+    "english": "I am hungry"
+  },
+  {
+    "spanish": "Tengo sed",
+    "english": "I am thirsty"
+  },
+  {
+    "spanish": "¿Cuántos años tienes?",
+    "english": "How old are you?"
+  },
+  {
+    "spanish": "Tengo veinte años",
+    "english": "I am twenty years old"
+  },
+  {
+    "spanish": "¿Qué hora es?",
+    "english": "What time is it?"
+  },
+  {
+    "spanish": "Son las tres",
+    "english": "It is three o'clock"
+  },
+  {
+    "spanish": "Hace calor hoy",
+    "english": "It is hot today"
+  },
+  {
+    "spanish": "Hace frío hoy",
+    "english": "It is cold today"
+  },
+  {
+    "spanish": "Está lloviendo",
+    "english": "It is raining"
+  },
+  {
+    "spanish": "Me gusta leer",
+    "english": "I like to read"
+  },
+  {
+    "spanish": "Me gusta viajar",
+    "english": "I like to travel"
+  },
+  {
+    "spanish": "No me gusta el café",
+    "english": "I don't like coffee"
+  },
+  {
+    "spanish": "¿Puedes ayudarme?",
+    "english": "Can you help me?"
+  },
+  {
+    "spanish": "Necesito ayuda",
+    "english": "I need help"
+  },
+  {
+    "spanish": "¿Dónde está el baño?",
+    "english": "Where is the bathroom?"
+  },
+  {
+    "spanish": "Está a la derecha",
+    "english": "It is on the right"
+  },
+  {
+    "spanish": "Está a la izquierda",
+    "english": "It is on the left"
+  },
+  {
+    "spanish": "Sigue recto",
+    "english": "Go straight ahead"
+  },
+  {
+    "spanish": "¿Cuánto cuesta esto?",
+    "english": "How much does this cost?"
+  },
+  {
+    "spanish": "Es muy caro",
+    "english": "It is very expensive"
+  },
+  {
+    "spanish": "Es barato",
+    "english": "It is cheap"
+  },
+  {
+    "spanish": "Tengo que irme",
+    "english": "I have to go"
+  },
+  {
+    "spanish": "Nos vemos mañana",
+    "english": "See you tomorrow"
+  },
+  {
+    "spanish": "¿Hablas inglés?",
+    "english": "Do you speak English?"
+  },
+  {
+    "spanish": "Hablo un poco de español",
+    "english": "I speak a little Spanish"
+  },
+  {
+    "spanish": "No entiendo",
+    "english": "I don't understand"
+  },
+  {
+    "spanish": "¿Puedes repetir, por favor?",
+    "english": "Can you repeat, please?"
+  },
+  {
+    "spanish": "Estoy cansado",
+    "english": "I am tired (male)"
+  },
+  {
+    "spanish": "Estoy cansada",
+    "english": "I am tired (female)"
+  },
+  {
+    "spanish": "Estoy feliz",
+    "english": "I am happy"
+  },
+  {
+    "spanish": "Estoy triste",
+    "english": "I am sad"
+  },
+  {
+    "spanish": "Tengo miedo",
+    "english": "I am afraid"
+  },
+  {
+    "spanish": "¿Qué estás haciendo?",
+    "english": "What are you doing?"
+  },
+  {
+    "spanish": "Estoy estudiando",
+    "english": "I am studying"
+  },
+  {
+    "spanish": "Vamos a la playa",
+    "english": "We are going to the beach"
+  },
+  {
+    "spanish": "Ella está cocinando",
+    "english": "She is cooking"
+  },
+  {
+    "spanish": "Él está leyendo un libro",
+    "english": "He is reading a book"
+  },
+  {
+    "spanish": "Mis padres viven en el campo",
+    "english": "My parents live in the countryside"
+  },
+  {
+    "spanish": "Voy a llamar a mi hermana",
+    "english": "I am going to call my sister"
+  },
+  {
+    "spanish": "¿Qué día es hoy?",
+    "english": "What day is it today?"
+  },
+  {
+    "spanish": "Hoy es lunes",
+    "english": "Today is Monday"
+  },
+  {
+    "spanish": "Mañana es mi cumpleaños",
+    "english": "Tomorrow is my birthday"
+  },
+  {
+    "spanish": "Feliz cumpleaños",
+    "english": "Happy birthday"
+  },
+  {
+    "spanish": "Buen provecho",
+    "english": "Enjoy your meal"
+  },
+  {
+    "spanish": "Que tengas un buen día",
+    "english": "Have a good day"
+  }
+]
